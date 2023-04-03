@@ -8,6 +8,8 @@ import { dateTimeStyles } from "./styles";
 import CustomModal from "../CustomModal";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { formatDate } from "../../../../submodule/common/common";
+import i18n from "../../../../i18n/i18n";
+import { flexbox, textAlign } from "../../_commons";
 interface Props {
   value: Date;
   withLabel?: boolean;
@@ -46,7 +48,7 @@ export default function DateTime({
   return (
     <View style={dateTimeStyles.row}>
       {withLabel && (
-        <View style={dateTimeStyles.label}>
+        <View style={[dateTimeStyles.label, (i18n.isRtl && flexbox.alignItems.end)]}>
           <Text>{label}</Text>
         </View>
       )}

@@ -13,6 +13,7 @@ import Button from "../Button";
 import { flexbox } from "../../_commons";
 import { icon_arrow_down } from "../../img";
 import { styles } from "../main";
+import i18n from "../../../../i18n/i18n";
 interface Props {
   withLabel?: boolean;
   placeholder?: string;
@@ -54,7 +55,7 @@ export default function SelectOptions({
   return (
     <View style={selectStyles.row}>
       {withLabel && (
-        <View style={selectStyles.label}>
+        <View style={[selectStyles.label, (i18n.isRtl && flexbox.alignItems.end)]}>
           <Text>{label}</Text>
         </View>
       )}
@@ -62,13 +63,13 @@ export default function SelectOptions({
         onPress={() => showOptionsModal()}
         style={[selectStyles.input, hightlightInputErrorStyle]}
       >
-        <Text>{selectedOption?.label ?? "Please Select"}</Text>
+        <Text>{selectedOption?.label ?? i18n.t("pleaseSelect")}</Text>
         <Image source={icon_arrow_down} style={[selectStyles.arrowDown]} />
       </TouchableOpacity>
       <CustomModal
         visible={showOptions}
         onClose={hideOptions}
-        header={{ title: `Choose ${label}` }}
+        header={{ title: `${label}` }}
       >
         <View style={selectStyles.optionsList}>
           {options.map((option: SelectProps, i: number) => {
@@ -87,7 +88,7 @@ export default function SelectOptions({
               >
                 <Text>{option.label}</Text>
                 <Button
-                  title={isSelected ? "Selected" : "Select"}
+                  title={isSelected ? i18n.t("selected") : i18n.t("select")}
                   size={"mini"}
                   color={"bc1Lightest"}
                   onPress={() => onOptionPress(option)}

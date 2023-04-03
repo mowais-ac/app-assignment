@@ -104,7 +104,7 @@ export default function Profile() {
   }, [isValidForm]);
 
   return (
-    <Main subheader={{ title: "My Profile", description: "" }}>
+    <Main subheader={{ title: i18n.t("myProfile"), description: "" }}>
       <ScrollView
         refreshControl={
           <RefreshControl
@@ -119,7 +119,7 @@ export default function Profile() {
       >
         <Form
           withLabel
-          buttonLabel={"Save Profile"}
+          buttonLabel={i18n.t("saveProfile")}
           onSubmit={() => onSubmit()}
         >
           <Input
@@ -134,10 +134,10 @@ export default function Profile() {
             }}
           />
           <Input
-            label={"Phone Number"}
+            label={i18n.t("phoneNumber")}
             withLabel
             onChange={(v) => onChange(v, "phone_number")}
-            placeholder={"phone number"}
+            placeholder={i18n.t("phoneNumber")}
             value={profileFormInputs.phone_number?.toString()}
             type={ENUM_INPUT_TYPE.PHONE}
             error={{
@@ -146,16 +146,16 @@ export default function Profile() {
             }}
           />
           <SelectOptions
-            label={"Gender"}
+            label={i18n.t("gender")}
             withLabel
             onSelect={(selected) => onSelect(selected, "gender")}
             options={[
               {
-                label: "Male",
+                label: i18n.t("male"),
                 value: ENUM_GENDER.MALE,
               },
               {
-                label: "Female",
+                label: i18n.t("female"),
                 value: ENUM_GENDER.FEMALE,
               },
             ]}
@@ -167,10 +167,10 @@ export default function Profile() {
             }}
           />
           <Input
-            label={"Website URL"}
+            label={i18n.t("websiteURL")}
             withLabel
             onChange={(v) => onChange(v, "website_url")}
-            placeholder={"website url"}
+            placeholder={"https://domain.com"}
             value={profileFormInputs.website_url}
             error={{
               show: showErrors,
@@ -181,7 +181,7 @@ export default function Profile() {
           />
           
           <DateTime
-            label={"Expiry Date"}
+            label={i18n.t("expiryDate")}
             withLabel
             onSelect={(selected) =>
               onSelect(selected, "date")
@@ -193,7 +193,7 @@ export default function Profile() {
             }}
           />
           <Attach
-            label={"Document 1"}
+            label={i18n.t("document1")}
             onSelect={(v) => onSelectFile(v, "attach_document_1")}
             file={profileFormInputs.attach_document_1}
             error={{
@@ -202,7 +202,7 @@ export default function Profile() {
             }}
           />
           <Attach
-            label={"Document 2"}
+            label={i18n.t("document2")}
             onSelect={(v) => onSelectFile(v, "attach_document_2")}
             file={profileFormInputs.attach_document_2}
             error={{

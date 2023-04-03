@@ -6,6 +6,7 @@ import {
   INPUT_TYPES,
 } from "../../../../submodule/common/interfaces/interfaces";
 import { img_hide_password, img_show_password } from "../../img";
+import { flexbox } from "../../_commons";
 import { inputStyles } from "./styles";
 
 interface Props {
@@ -94,7 +95,7 @@ export default function Input({
   return (
     <View style={inputStyles.row}>
       {withLabel && (
-        <View style={inputStyles.label}>
+        <View style={[inputStyles.label, (i18n.isRtl && flexbox.alignItems.end)]}>
           <Text>{label}</Text>
         </View>
       )}

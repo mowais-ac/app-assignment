@@ -56,8 +56,8 @@ export default function Auth() {
   const onBackToLogin = useCallback(() => {
     setAuthViewMode("LOGIN");
   }, [setAuthViewMode]);
+  
   useEffect(() => {
-    console.log(213123);
     setAuthViewMode("LOGIN");
   }, [setAuthViewMode]);
 
@@ -110,7 +110,9 @@ export default function Auth() {
         <Divider center />
         <View>
           <Text style={[authStyle.txt, textAlign.center]}>
-            {i18n.t('welcome')}
+            {i18n.t('welcome', {
+              name: "John Doe",
+            })}
           </Text>
         </View>
         <Button

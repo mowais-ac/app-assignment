@@ -1,5 +1,5 @@
 const en = {
-    welcome: 'It is a vision of what a new future might look like.',
+    welcome: 'Hi {{name}}, Welcome to ilmyst.com, It is a vision of what a new future might look like.',
     getStarted: 'Get Started',
     signInTo: 'Sign in to ilmyst Portal',
     enterOtp: 'Enter OTP',
@@ -34,10 +34,22 @@ const en = {
     last5Transactions: "Last 5 Transactions",
     noTransactionFound: "No Transactions Found",
     assignmentFor: "Assignment for LTIMindtree",
+    myProfile: "My Profile",
+    SaveProfile: "Save Profile",
+    gender: "Gender",
+    websiteURL: "Website URL",
+    expiryDate: "Expiry Date",
+    document1: "Document 1",
+    document2: "Document 2",
+    male: "Male",
+    female: "Female",
+    pleaseSelect: "Please Select",
+    select: "Select",
+    selected: "Selected",
   };
   
   const ar = {
-    welcome: 'إنها رؤية لما قد يبدو عليه المستقبل الجديد.',
+    welcome: 'مرحبًا {{name}} ، مرحبًا بكم في ilmyst.com ، إنها رؤية لما قد يبدو عليه المستقبل الجديد.',
     getStarted: 'ابدأ الآن',
     signInTo: 'سجّل الدخول إلى بوابة ilmyst',
     enterOtp: 'أدخل كلمة المرور لمرة واحدة',
@@ -72,5 +84,17 @@ const en = {
     last5Transactions: "آخر 5 معاملات",
     noTransactionFound: "لم يتم العثور على معاملات",
     assignmentFor: "التنازل عن LTIMindtree",
+    saveProfile: "احفظ الملف",
+    myProfile: "ملفي",
+    gender: "جنس",
+    websiteURL: "رابط الموقع",
+    expiryDate: "تاريخ الانتهاء",
+    document1: "المستند 1",
+    document2: "المستند 2",
+    male: "ذكر",
+    female: "أنثى",
+    pleaseSelect: "الرجاء التحديد",
+    select: "يختار",
+    selected: "المحدد",
   };
   export { en, ar };
